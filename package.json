@@ -4,13 +4,14 @@
   "description": "Image uplload using node js",
   "main": "main.js",
   "scripts": {
-    "build": "webpack-dev-server"
+    "build": "webpack-dev-server --inline=true"
   },
   "author": "Iyappan M",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
