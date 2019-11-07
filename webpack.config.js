@@ -16,7 +16,9 @@ module.exports = {
         port: 3000,
         hot: true,   
         open: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        open: 'http://localhost:3000/login',
+        publicPath: "/"
     },
     devtool: 'inline-source-map'
 };
