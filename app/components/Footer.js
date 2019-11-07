@@ -8,7 +8,7 @@ class Footer extends React.Component {
     this.listRef = React.createRef();
     this.state = {
         initData : 'Footer'
-    }
+    };
   }
   static getDerivedStateFromProps(props, state){
       
