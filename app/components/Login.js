@@ -50,8 +50,10 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-
-export default function Login() {
+const onSubmit = (props) => {
+    props.history.push('/dashboard')
+}
+export default function Login(props) {
   const classes = useStyles();
 
   return (
@@ -97,6 +99,7 @@ export default function Login() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick = {()=>onSubmit(props)}
           >
             Sign In
           </Button>
