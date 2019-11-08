@@ -2,9 +2,9 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 // import { withStyles } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Header from './Header';
-import Footer from './Footer';
-import Sidebar from './Sidebar';
+import Header from './common/Header';
+import Footer from './common/Footer';
+import Sidebar from './common/Sidebar';
 import Home from './Home';
 
 const drawerWidth = 240;
@@ -100,57 +100,3 @@ export default function App() {
         </div>
     );
 }
-
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.listRef = React.createRef();
-//     this.state = {
-//         open : false
-//     }
-//   }
-//   static getDerivedStateFromProps(props, state){
-//      return null; 
-//   }
-
-//   getSnapshotBeforeUpdate(prevProps, prevState) {
-//     return null;
-//   }
-
-//   componentDidUpdate(prevProps, prevState, snapshot) {
-    
-//   }
-
-//   handleDrawerOpen = (status) => {
-//     this.setState({
-//       open: status
-//     });
-//   };
-
-//   handleDrawerClose = (status) => {
-//     this.setState({
-//       open: status
-//     });
-//   };
-
-//   render() {
-//     // const [initData, setinitData] = React.useState('Sreeja');
-//     const { classes } = this.props;
-//     return (
-//         <div className={classes.root}>
-//             <CssBaseline />
-//             <Header classes={classes}
-//                 handleDrawerOpen = {this.handleDrawerOpen}
-//                 open = {this.state.open}
-//             />
-//             <Sidebar classes={classes}
-//                 handleDrawerClose = {this.handleDrawerClose}
-//                 open = {this.state.open}
-//             />
-//             <Home classes={classes}/>
-//             <Footer classes={classes}/>
-//         </div>
-//     );
-//   }
-// }
-// export default  withStyles(useStyles)(App);
