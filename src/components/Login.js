@@ -50,12 +50,22 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-const onSubmit = (props) => {
-    props.history.push('/dashboard')
+const onSubmit = (props,data) => {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const loginData = {
+    userName: username,
+    password: password
+  }
+   props.dispatchLogin(loginData);
+   
 }
-export default function Login(props) {
+const Login = (props) => {
   const classes = useStyles();
-
+  if(props.loginResponse && props.loginResponse.access === 'granted'){
+    props.history.push('/dashboard')
+  }
+  console.log('props value-------',props);
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -72,7 +82,7 @@ export default function Login(props) {
             margin="normal"
             required
             fullWidth
-            id="email"
+            id="username"
             label="Email Address"
             name="email"
             autoComplete="email"
@@ -99,7 +109,7 @@ export default function Login(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick = {()=>onSubmit(props)}
+            onClick = {()=>onSubmit(props,)}
           >
             Sign In
           </Button>
@@ -123,3 +133,5 @@ export default function Login(props) {
     </Container>
   );
 }
+
+export default Login; 

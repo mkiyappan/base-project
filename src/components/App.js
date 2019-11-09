@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from './common/Header';
 import Footer from './common/Footer';
 import Sidebar from './common/Sidebar';
-import Home from './Home';
+import Dashboard from './Dashboard';
 
 const drawerWidth = 240;
 
@@ -95,7 +95,7 @@ export default function App() {
                 open = {open}
                 theme = {theme}
             />
-            <Home classes={classes}/>
+            <Dashboard classes={classes}/>
             <Footer classes={classes}/>
         </div>
     );

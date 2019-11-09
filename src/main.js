@@ -2,8 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import Login from './components/Login';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './reducers';
+import Login from './containers/Login';
 import Register from './components/Register';
+
+const store = createStore(rootReducer);
 
 const routing = (
     <Router>
@@ -16,4 +21,7 @@ const routing = (
     </Router>
   )
 
-ReactDOM.render(routing, document.getElementById('app'));
+ReactDOM.render(
+  <Provider store={store}>
+    {routing}
+  </Provider>, document.getElementById('app'));
